@@ -15,7 +15,7 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 	
-public:
+private:
 	ATank* GetControlledTank() const;
 	
 	void BeginPlay() override;
@@ -25,7 +25,12 @@ public:
 
 	// Move turret/barrel towards crosshair
 	void AimTowardsCrosshair();
-private:
 
+	UPROPERTY(EditAnywhere)
+		float CrossHairXlocation = 0.5f;
+
+	UPROPERTY(EditAnywhere)
+		float CrossHairYLocation = 0.33333f;
+	
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 };
