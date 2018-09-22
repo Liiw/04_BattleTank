@@ -25,4 +25,7 @@ public:
 
 	// Move turret/barrel towards crosshair
 	void AimTowardsCrosshair();
+private:
+
+	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 };
