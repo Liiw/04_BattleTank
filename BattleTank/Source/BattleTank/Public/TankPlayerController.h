@@ -19,4 +19,10 @@ public:
 	ATank* GetControlledTank() const;
 	
 	void BeginPlay() override;
+
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	// Move turret/barrel towards crosshair
+	void AimTowardsCrosshair();
 };
