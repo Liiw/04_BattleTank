@@ -14,8 +14,8 @@ void ATankAIController::BeginPlay()
 	else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("AiController found player tank: %s"), *(PlayerTank->GetName()));
-	}
-}
+	};
+};
 
 // Called every frame
 void ATankAIController::Tick(float DeltaTime)
@@ -30,18 +30,17 @@ void ATankAIController::Tick(float DeltaTime)
 		GetControlledTank()->AimAt(GetPlayerTank()->GetActorLocation());
 
 		/// FIRE!
-	}
-	
-}
+	};
+};
 
 ATank* ATankAIController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
-}
+};
 
 ATank* ATankAIController::GetPlayerTank() const
 {
 	return Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn());
-}
+};
 
 

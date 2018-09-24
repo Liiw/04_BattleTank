@@ -35,5 +35,4 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = Firing)
 		float LaunchSpeed = 100000; // In cm = 1000 m/s
-
 };

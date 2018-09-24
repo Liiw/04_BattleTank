@@ -18,32 +18,31 @@ void ATankPlayerController::BeginPlay()
 	else
 	{ 
 	UE_LOG(LogTemp, Warning, TEXT("PlayerController posessing: %s"), *(ControlledTank->GetName()));
-	}
-}
+	};
+};
 
 // Called every frame
 void ATankPlayerController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	AimTowardsCrosshair();
-}
+};
 
 ATank* ATankPlayerController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
-}
+};
 
 void ATankPlayerController::AimTowardsCrosshair()
 {
-	if (!GetControlledTank()) { return; }
-
+	if (!GetControlledTank()) { return; };
 
 	FVector HitLocation; /// OUT parameter
 	if (GetSightRayHitLocation(HitLocation))
 	{ 
 		GetControlledTank()->AimAt(HitLocation);
-	}
-}
+	};
+};
 
 // Get world location linetrace through crosshair, true if hits landscape
 bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) const
@@ -60,10 +59,10 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) cons
 		/// Line-trace along that LookDirection and see what we hit (up to max range)
 		GetLookVectorHitLocation(LookDirection, OutHitLocation);
 		return true;
-	}
+	};
 		
 	return false;
-}
+};
 
 bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const
 {
@@ -75,7 +74,7 @@ bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector& 
 		CameraWorldLocation,
 		LookDirection
 	);
-}
+};
 
 bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection,FVector& OutHitLocation) const
 {
@@ -91,7 +90,7 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection,FVect
 	{
 		OutHitLocation = HitResult.Location;
 		return true;
-	}
+	};
 	OutHitLocation = FVector(0);
 	return false; // Line trace did not succeed
-}
+};
