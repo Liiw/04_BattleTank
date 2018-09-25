@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Engine/World.h"
 #include "Components/StaticMeshComponent.h"
 #include "TankBarrel.generated.h"
 
@@ -20,10 +21,10 @@ public:
 	
 private:
 	UPROPERTY(EditAnywhere, Category = Setup)
-		float MaxDegreesPerSeconds = 20.0f;
+		float MaxDegreesPerSeconds = 5.0f;
 
 	UPROPERTY(EditAnywhere, Category = Setup)
-		float MaxElevationDegrees = 20.0f;
+		float MaxElevationDegrees = 30.0f;
 
 	UPROPERTY(EditAnywhere, Category = Setup)
 		float MinElevationDegrees = 0.0f;
