@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "public/Tank.h"
+#include "Public/TankAimingComponent.h" // TankBarrel Forward Declaration comes from this
 
 
 

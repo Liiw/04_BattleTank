@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "public/TankPlayerController.h"
+#include "Public/Tank.h"
 
 // Tick
 	// Super
@@ -17,7 +18,7 @@ void ATankPlayerController::BeginPlay()
 	}
 	else
 	{ 
-	UE_LOG(LogTemp, Warning, TEXT("PlayerController posessing: %s"), *(ControlledTank->GetName()));
+		UE_LOG(LogTemp, Warning, TEXT("PlayerController posessing: %s"), *(ControlledTank->GetName()));
 	};
 };
 

@@ -3,15 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Public/Tank.h"
 #include "AIController.h"
 #include "GameFramework/Actor.h"
 #include "Engine/World.h"
 #include "TankAIController.generated.h"
 
-/**
- * 
- */
+class ATank;
+
 UCLASS()
 class BATTLETANK_API ATankAIController : public AAIController
 {
