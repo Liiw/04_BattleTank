@@ -2,9 +2,10 @@
 
 #include "public/Tank.h"
 #include "public/Projectile.h"
-#include "Public/TankBarrel.h"
-#include "Public/TankTurret.h"
-#include "Public/TankAimingComponent.h" // TankBarrel Forward Declaration comes from this
+#include "public/TankBarrel.h"
+#include "public/TankTurret.h"
+#include "public/TankAimingComponent.h"
+#include "public/TankMovementComponent.h"
 
 
 
