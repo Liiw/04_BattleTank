@@ -25,13 +25,13 @@ private:
 	// Move turret/barrel towards crosshair
 	void AimTowardsCrosshair();
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 		float CrossHairXlocation = 0.5f;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 		float CrossHairYLocation = 0.33333f;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 		float LineTraceRange = 1000000.0f;
 	
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
