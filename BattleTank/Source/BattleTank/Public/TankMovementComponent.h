@@ -24,7 +24,10 @@ public:
 		void IntendTurn(float Throw);
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
-		void Initialize(UTankTrack* LeftTrackToSet, UTankTrack* RightTrackToSet);
+		virtual void Initialize(UTankTrack* LeftTrackToSet, UTankTrack* RightTrackToSet);
+
+	/// TODO check best protection
+	void RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed) override;
 
 private:
 	UTankTrack* LeftTrack = nullptr;
