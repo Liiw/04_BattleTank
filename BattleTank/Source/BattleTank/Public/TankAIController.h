@@ -8,8 +8,7 @@
 #include "Engine/World.h"
 #include "TankAIController.generated.h"
 
-class ATank;
-class UTankAimingComponent
+class UTankAimingComponent;
 
 UCLASS()
 class BATTLETANK_API ATankAIController : public AAIController
@@ -26,8 +25,6 @@ public:
 		float LaunchSpeed = 6000.f; // In cm
 
 private:
-	ATank* ControlledTank = nullptr;
-	ATank* PlayerTank = nullptr;
 
 	// How close can the AI get
 	float AcceptanceRadius = 3000.0f;
