@@ -35,7 +35,7 @@ void ATankPlayerController::AimTowardsCrosshair()
 	FVector HitLocation; /// OUT parameter
 	if (GetSightRayHitLocation(HitLocation))
 	{ 
-		GetControlledTank()->AimAt(HitLocation);
+		GetControlledTank()->FindComponentByClass<UTankAimingComponent>()->AimAt(HitLocation, LaunchSpeed);
 	};
 };
 

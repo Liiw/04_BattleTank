@@ -39,6 +39,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly)
 		float LineTraceRange = 1000000.0f;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+		float LaunchSpeed = 6000.f; // In cm
 	
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 

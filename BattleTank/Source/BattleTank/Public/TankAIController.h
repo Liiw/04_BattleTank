@@ -9,6 +9,7 @@
 #include "TankAIController.generated.h"
 
 class ATank;
+class UTankAimingComponent
 
 UCLASS()
 class BATTLETANK_API ATankAIController : public AAIController
@@ -20,6 +21,9 @@ public:
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+		float LaunchSpeed = 6000.f; // In cm
 
 private:
 	ATank* ControlledTank = nullptr;
