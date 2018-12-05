@@ -30,7 +30,7 @@ void ATankAIController::Tick(float DeltaTime)
 	AimingComponent->AimAt(PlayerTank->GetActorLocation());
 
 	/// FIRE!
-	// Todo enable when necessary AimingComponent->Fire();
+	// TODO enable when necessary AimingComponent->Fire();
 	
 };
 
