@@ -21,11 +21,14 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Firing")
-		float LaunchSpeed = 6000.f; // In cm
 
-private:
+protected:
+
+	// Disable AI firing for testing purposes
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+		bool AIFiringEnabled = false;
 
 	// How close can the AI get
-	float AcceptanceRadius = 3000.0f;
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+		float AcceptanceRadius = 7000.0f;
 };

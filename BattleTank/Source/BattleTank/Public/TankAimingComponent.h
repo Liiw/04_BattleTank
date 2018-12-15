@@ -36,6 +36,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Setup")
 		virtual void Initialize(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet);
 
+	EFiringState GetFiringState() const;
+
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")
 		EFiringState FiringState = EFiringState::Reloading;
@@ -56,8 +58,9 @@ private:
 	UTankTurret* Turret = nullptr;
 
 
+	// Projectile launch speed, hitsolution distance
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
-		float LaunchSpeed = 6000.f; // In cm
+		float LaunchSpeed = 20000.f; // In cm
 
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 		TSubclassOf<AProjectile> ProjectileBlueprint;
