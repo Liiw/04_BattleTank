@@ -3,6 +3,7 @@
 
 # Visual Studio 2015 database file
 *.VC.db
+BattleTank.VC.VC.opendb
 
 # Compiled Object files
 *.slo
@@ -76,5 +77,4 @@ Plugins/*/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
-# StarterContent
-Content/StarterContent
+
