@@ -5,9 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "GameFramework/Actor.h"
+#include "Engine/World.h"
 #include "Components/StaticMeshComponent.h"
 #include "Runtime/Engine/Classes/PhysicsEngine/RadialForceComponent.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "TimerManager.h"
 #include "Projectile.generated.h"
 
 UCLASS()
@@ -42,4 +44,9 @@ private:
 	
 	UFUNCTION()
 		void OnHit(UPrimitiveComponent* Hitcomponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
+
+	void OnTimerExpire();
+
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+		float DestroyDelay = 10.0f;
 };
