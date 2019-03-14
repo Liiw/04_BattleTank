@@ -2,6 +2,7 @@
 
 #include "public/TankPlayerController.h"
 #include "Public/TankAimingComponent.h"
+#include "Tank.h"
 
 
 // Tick
@@ -84,4 +85,22 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection,FVect
 	};
 	OutHitLocation = FVector(0);
 	return false; // Line trace did not succeed
+};
+
+void ATankPlayerController::SetPawn(APawn* InPawn)
+{
+	Super::SetPawn(InPawn);
+	if (InPawn)
+	{
+		auto PossessedTank = Cast<ATank>(InPawn);
+		if (!ensure(PossessedTank)) { return; };
+
+		// Subscribe our local method to the tank's death event
+		PossessedTank->OnDeath.AddUniqueDynamic(this, &ATankPlayerController::OnPossessedTankDeath);
+
+	};
+}
+void ATankPlayerController::OnPossessedTankDeath()
+{
+	StartSpectatingOnly();
 };
