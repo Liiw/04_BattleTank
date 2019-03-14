@@ -8,6 +8,7 @@
 #include "Engine/World.h"
 #include "Components/StaticMeshComponent.h"
 #include "Runtime/Engine/Classes/PhysicsEngine/RadialForceComponent.h"
+#include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "TimerManager.h"
 #include "Projectile.generated.h"
@@ -42,11 +43,15 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 		URadialForceComponent* ExplosionForce = nullptr;
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+		float DestroyDelay = 5.0f;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+		float ProjectileDamage = 20.0f;
+
 	UFUNCTION()
 		void OnHit(UPrimitiveComponent* Hitcomponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
 
 	void OnTimerExpire();
 
-	UPROPERTY(EditDefaultsOnly, Category = "Setup")
-		float DestroyDelay = 10.0f;
 };
