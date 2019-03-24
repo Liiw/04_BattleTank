@@ -2,6 +2,7 @@
 
 #include "SpawnPoint.h"
 
+
 // Sets default values for this component's properties
 USpawnPoint::USpawnPoint()
 {
@@ -17,10 +18,11 @@ USpawnPoint::USpawnPoint()
 void USpawnPoint::BeginPlay()
 {
 	Super::BeginPlay();
-
-	auto NewActor = GetWorld()->SpawnActor<AActor>(SpawnClass);
+	auto NewActor = GetWorld()->SpawnActorDeferred<AActor>(SpawnClass, GetComponentTransform());
+	
 	if (!NewActor) return;
-	NewActor->AttachToComponent(this, FAttachmentTransformRules::KeepRelativeTransform);
+	NewActor->AttachToComponent(this, FAttachmentTransformRules::KeepWorldTransform);
+	UGameplayStatics::FinishSpawningActor(NewActor, GetComponentTransform());
 	
 }
 

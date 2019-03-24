@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "GameFramework/Actor.h"
+#include "Engine/World.h"
 #include "SpawnPoint.generated.h"
 
 
@@ -27,7 +30,5 @@ public:
 private:
 	// Config
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
-		TSubclassOf<AActor> SpawnClass;
-
-		
+		TSubclassOf<AActor> SpawnClass;	
 };
